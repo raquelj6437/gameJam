@@ -33,10 +33,16 @@
 
       }
       
-      question="easy"
+      question=question[0]
       
       if (question == "easy"){
           document.getElementById("demo").innerHTML = easy[num]
+      }
+      if (question == "medium"){
+          document.getElementById("demo").innerHTML = medium[num]
+      }
+      if (question == "hard"){
+          document.getElementById("demo").innerHTML = medium[num]
       }
   </script>
   </body>
