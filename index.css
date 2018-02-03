@@ -13,3 +13,6 @@ h3 {
     color: #414441;
 }
 
+html, body, #background {
+    height: 100%;
+}
