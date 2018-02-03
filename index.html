@@ -103,21 +103,21 @@
             }
             if(button=="pushed"){
                 console.log(number)
-                number ++
+                number++
             }
+            
+            question = question[number]
+    
+              if (question == "easy"){
+                  document.getElementById("demo").innerHTML = easy[num]
+              }
+              else if (question == "medium"){
+                  document.getElementById("demo").innerHTML = medium[num]
+              }
+              else if (question == "hard"){
+                  document.getElementById("demo").innerHTML = medium[num]
+              }
         }
-    
-    question = question[number]
-    
-      if (question == "easy"){
-          document.getElementById("demo").innerHTML = easy[num]
-      }
-      elseif (question == "medium"){
-          document.getElementById("demo").innerHTML = medium[num]
-      }
-      else if (question == "hard"){
-          document.getElementById("demo").innerHTML = medium[num]
-      }
   </script>
   </div>
   </body>
