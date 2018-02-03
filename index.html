@@ -18,13 +18,14 @@
     </select>
     
     <button onclick="myFunction()">Submit</button>
+    <button onclick="buttonFunction()">Next</button>
     
-    <p></p>
+    <p id = "reasoning"></p>
     
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   
   <script>
-      var question = ["easy","medium","hard"];
+      var question
   
       var easy = ["Staff at Electro confirm that their products are better than competitors.","A survey conducted on highschool students in the Moore suburbs shows that the suburbs are better for all teens."];
       var medium = ["According to polls, Presidential candidate #1 will definitely be the next president.", "According to teens studying the release of Apple products, they predict there will most likely be an iPhone 21 release in 2020."];
@@ -35,38 +36,54 @@
       
       var answer=["credible","non-credible"]
       
+      var button
+      
       function myFunction() {
         choice = document.getElementById("choice").selectedIndex;
         
         console.log(choice)
+        
+        button = "pushed"
       }
+      
+      function buttonFunction() {
+            if (button!="pushed"){
+                window.alert("You must submit before going to the next question!")
+            }
+        }
     
     question = "easy"
     
       if (question == "easy"){
           document.getElementById("demo").innerHTML = easy[num]
           if (num==1){
-            
+            if (choice==0){
+                document.getElementById("reasoning").innerHTML = "You are correct!"
+                question = "medium"
+            }
+            else if (choice==0){
+                document.getElementById("reasoning").innerHTML = "This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product."
+            }
           }
-          if (num==2){
+          else if (num==2){
             
           }
       }
-      if (question == "medium"){
+      else if (question == "medium"){
           document.getElementById("demo").innerHTML = medium[num]
           if (num==1){
              
           }
-          if (num==2){
+          else if (num==2){
             
           }
       }
-      if (question == "hard"){
+      else if (question == "hard"){
           document.getElementById("demo").innerHTML = medium[num]
           if (num==1){
               
           }
-          if (num==2){
+          else if (num==2){
               
           }
       }
