@@ -1,6 +1,6 @@
 #background {
     height:500px;
-    background: linear-gradient(#A777A2, white);
+    background: linear-gradient(#16e2df 5%, white 70%,#adadad);
 }
 
 #demo {
@@ -12,3 +12,4 @@ h3 {
     font-size: 30px;
     color: #414441;
 }
+
