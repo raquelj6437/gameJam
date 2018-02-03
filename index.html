@@ -46,7 +46,7 @@
       var medium = ["According to polls, Presidential candidate #1 will definitely be the next president.", "According to teens studying the release of Apple products, they predict there will most likely be an iPhone 21 release in 2020."];
       var hard = ["According to a researchers, there is 0.2 milligrams of gold found in blood."];
       
-      var explination = ["This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product.",];
+      var explination = [];
       
       var num = Math.floor((Math.random() * 2));
       
@@ -73,36 +73,34 @@
                 window.alert("You are correct!");
             }
             else if (choice==1){
-                window.alert(explination[0]);
+                window.alert("This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product.");
             }
           }
           else if (num==2){
-            
+            if (choice==1){
+                console.log(choice);
+                window.alert("You are correct!");
+            }
+            else if (choice==0){
+                window.alert("A survey made in one school cannot be applied to all teens.");
+            }
           }
         }
         
         // if the question is medium is determines wether your answer is correct or not
         else if (question == "medium"){
           document.getElementById("demo").innerHTML = medium[num];
-          if (num==1){
-             
-          }
-          else if (num==2){
-            
-          }
+          if (choice==0){
+                console.log(choice);
+                window.alert("You are correct!");
+            }
+            else if (choice==1){
+                window.alert("Polls madde before an election can anticipate the result but cannot actually determine the outcome with certainty."
+                );
+            }
         }
         
         // if the question is hard is determines wether your answer is correct or not
-      else if (question == "hard"){
-          document.getElementById("demo").innerHTML = medium[num];
-          if (choice==0){
-                console.log(choice)
-                window.alert("You are correct!")
-            }
-            else if (choice==1){
-                window.alert("Polls madde before an election can anticipate the result but cannot actually determine the outcome with certainty.")
-            }
-        }
       else if (question == "hard"){
           document.getElementById("demo").innerHTML = hard[num]
           if (num==1){
@@ -112,7 +110,9 @@
         }
       }
       
-      question = question[0]
+      var x=Math.floor((Math.random() * 3));
+      
+      question = question[x]
       
       // next button function
       function buttonFunction() {
