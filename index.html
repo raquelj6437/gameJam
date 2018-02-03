@@ -20,7 +20,7 @@
     <button onclick="myFunction()">Submit</button>
     <button onclick="buttonFunction()">Next</button>
     
-    <p id = "reasoning"></p>
+    <p><span id="reasoning"></span></p>
     
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   
@@ -30,7 +30,9 @@
       var easy = ["Staff at Electro confirm that their products are better than competitors.","A survey conducted on highschool students in the Moore suburbs shows that the suburbs are better for all teens."];
       var medium = ["According to polls, Presidential candidate #1 will definitely be the next president.", "According to teens studying the release of Apple products, they predict there will most likely be an iPhone 21 release in 2020."];
       var hard = [];
-      var num = Math.floor((Math.random() * 2));
+      
+      var explination = ["This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product.",]
+      var num = 1 //Math.floor((Math.random() * 2));
       
       var choice
       
@@ -52,17 +54,17 @@
             }
         }
     
-    question = "easy"
+      question = "easy"
     
       if (question == "easy"){
           document.getElementById("demo").innerHTML = easy[num]
           if (num==1){
             if (choice==0){
-                document.getElementById("reasoning").innerHTML = "You are correct!"
+                console.log("You are correct!")
                 question = "medium"
             }
-            else if (choice==0){
-                document.getElementById("reasoning").innerHTML = "This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product."
+            else if (choice==1){
+                console.log(explination[0])
             }
           }
           else if (num==2){
@@ -81,9 +83,6 @@
       else if (question == "hard"){
           document.getElementById("demo").innerHTML = medium[num]
           if (num==1){
-              
-          }
-          else if (num==2){
               
           }
       }
