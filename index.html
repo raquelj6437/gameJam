@@ -54,7 +54,6 @@
       
       var button;
       
-      var number = 0
       
       function myFunction() {
         choice = document.getElementById("choice").selectedIndex;
@@ -106,7 +105,11 @@
         }
       }
       
+      question = question[0]
+      
       function buttonFunction() {
+            var number = 0
+            
             if (button!="pushed"){
                 window.alert("You must submit before going to the next question!");
             }
@@ -117,7 +120,15 @@
             
             question = question[number]
     
-              if (question == "easy"){
+              if (question == "medium"){
+                  document.getElementById("demo").innerHTML = medium[num]
+              }
+              else if (question == "hard"){
+                  document.getElementById("demo").innerHTML = medium[num]
+              }
+        }
+        
+        if (question == "easy"){
                   document.getElementById("demo").innerHTML = easy[num]
               }
               else if (question == "medium"){
@@ -126,7 +137,6 @@
               else if (question == "hard"){
                   document.getElementById("demo").innerHTML = medium[num]
               }
-        }
   </script>
   </div>
   </body>
