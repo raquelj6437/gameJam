@@ -38,13 +38,15 @@
       
       var explination = ["This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product.",]
       
-      var num = 1 //Math.floor((Math.random() * 2));
+      var num = Math.floor((Math.random() * 2));
       
       var choice
       
       var answer=["credible","non-credible"]
       
       var button
+      
+      var number = 0
       
       function myFunction() {
         choice = document.getElementById("choice").selectedIndex;
@@ -70,33 +72,39 @@
         
         else if (question == "medium"){
           document.getElementById("demo").innerHTML = medium[num]
-          if (num==1){
-             
-          }
-          else if (num==2){
-            
-          }
+          if (choice==0){
+                console.log(choice)
+                window.alert("You are correct!")
+            }
+            else if (choice==1){
+                window.alert("Polls madde before an election can anticipate the result but cannot actually determine the outcome with certainty.")
+            }
         }
       else if (question == "hard"){
-          document.getElementById("demo").innerHTML = medium[num]
+          document.getElementById("demo").innerHTML = hard[num]
           if (num==1){
-              
+               console.log(choice)
+                window.alert("While an article may have information that can seem untrue, this does not mean it is. Within the article, research is cited and fully explained.")
           }
-      }
+        }
       }
       
       function buttonFunction() {
             if (button!="pushed"){
                 window.alert("You must submit before going to the next question!")
             }
+            if(button=="pushed"){
+                console.log(number)
+                number ++
+            }
         }
     
-    question = "easy"
+    question = question[number]
     
       if (question == "easy"){
           document.getElementById("demo").innerHTML = easy[num]
       }
-      else if (question == "medium"){
+      elseif (question == "medium"){
           document.getElementById("demo").innerHTML = medium[num]
       }
       else if (question == "hard"){
