@@ -12,17 +12,25 @@
     <!--Links the html file to the css file-->
 </head>
   <body>
+      <!--Places the whole page into a container-->
       <div id="background">
-      <h1>(Name of game)</h1>
+    <div class="container">
+      <h1>Learn To Discern</h1>
       <h3>Decide whether the headline is credible or not.</h3>
       <span id="demo"></span>
       
+      <!--Plays the music as soon as the page loads-->
+            <audio autoplay>
+          <source src="music.mp3" type="audio/mpeg">
+        </audio>
+
+            <!--Adds the dropdown bar for the choices "credible" and "non-credible"-->
     <select id = "choice">
         <option value="Non-credible">Non-credible</option>
         <option value="Credible">Credible</option>
     </select>
     
-    <button onclick="myFunction()">Submit</button>
+    <button onclick="myFunction()">Submit</button> <!--Creates the submit button-->
     <button onclick="buttonFunction()">Next</button>
     
     <p><span id="reasoning"></span></p>
