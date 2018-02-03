@@ -11,141 +11,150 @@
     <link rel="stylesheet" href="index.css" type="text/css">
     <!--Links the html file to the css file-->
 </head>
-  <body>
-      <!--Places the whole page into a container-->
-      <div id="background">
-    <div class="container">
-      <h1>Learn To Discern</h1>
-      <h3>Decide whether the headline is credible or not.</h3>
-      <span id="demo"></span>
-      
-      <!--Plays the music as soon as the page loads-->
+
+<body>
+    <!--Places the whole page into a container-->
+    <div id="background">
+        <div class="container">
+            <h1>Learn To Discern</h1>
+            <h3>Decide whether the headline is credible or not.</h3>
+            <span id="demo"></span>
+
+            <!--Plays the music as soon as the page loads-->
             <audio autoplay>
           <source src="music.mp3" type="audio/mpeg">
         </audio>
 
             <!--Adds the dropdown bar for the choices "credible" and "non-credible"-->
-    <select id = "choice">
+            <select id="choice">
         <option value="Non-credible">Non-credible</option>
         <option value="Credible">Credible</option>
     </select>
-    
-    <button onclick="myFunction()">Submit</button> <!--Creates the submit button-->
-    <button onclick="buttonFunction()">Next</button>
-    
-    <p><span id="reasoning"></span></p>
-    
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-  
-  <script>
-  
-  // a list of all the questions and answers for the game
-      var question= ["easy","medium","hard"];
-  
-      var easy = ["Staff at Electro confirm that their products are better than competitors.","A survey conducted on highschool students in the Moore suburbs shows that the suburbs are better for all teens."];
-      var medium = ["According to polls, Presidential candidate #1 will definitely be the next president.", "According to teens studying the release of Apple products, they predict there will most likely be an iPhone 21 release in 2020."];
-      var hard = ["According to a researchers, there is 0.2 milligrams of gold found in blood."];
-      
-      var explination = [];
-      
-      var num = Math.floor((Math.random() * 2));
-      
-      var choice;
-      
-      var answer=["credible","non-credible"];
-      
-      var button;
-      
-      // submit button code
-      
-      function myFunction() {
-        choice = document.getElementById("choice").selectedIndex;
-        
-        // console.log(choice)
-        
-        button = "pushed";
-        
-        // if the question is easy is determines wether your answer is correct or not
-        if (question == "easy"){
-          if (num==1){
-            if (choice==0){
-                console.log(choice);
-                window.alert("You are correct!");
-            }
-            else if (choice==1){
-                window.alert("This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product.");
-            }
-          }
-          else if (num==2){
-            if (choice==1){
-                console.log(choice);
-                window.alert("You are correct!");
-            }
-            else if (choice==0){
-                window.alert("A survey made in one school cannot be applied to all teens.");
-            }
-          }
-        }
-        
-        // if the question is medium is determines wether your answer is correct or not
-        else if (question == "medium"){
-          document.getElementById("demo").innerHTML = medium[num];
-          if (choice==0){
-                console.log(choice);
-                window.alert("You are correct!");
-            }
-            else if (choice==1){
-                window.alert("Polls madde before an election can anticipate the result but cannot actually determine the outcome with certainty."
-                );
-            }
-        }
-        
-        // if the question is hard is determines wether your answer is correct or not
-      else if (question == "hard"){
-          document.getElementById("demo").innerHTML = hard[num]
-          if (num==1){
-               console.log(choice)
-                window.alert("While an article may have information that can seem untrue, this does not mean it is. Within the article, research is cited and fully explained.")
-          }
-        }
-      }
-      
-      var x=Math.floor((Math.random() * 3));
-      
-      question = question[x]
-      
-      // next button function
-      function buttonFunction() {
-            var number = 0
-            
-            if (button!="pushed"){
-                window.alert("You must submit before going to the next question!");
-            }
-            if(button=="pushed"){
-                console.log(number)
-                number++
-            }
-            
-            question = question[number]
-    
-              if (question == "medium"){
-                  document.getElementById("demo").innerHTML = medium[num]
-              }
-              else if (question == "hard"){
-                  document.getElementById("demo").innerHTML = medium[num]
-              }
-        }
-        
-        if (question == "easy"){
-                  document.getElementById("demo").innerHTML = easy[num]
-              }
-              else if (question == "medium"){
-                  document.getElementById("demo").innerHTML = medium[num]
-              }
-              else if (question == "hard"){
-                  document.getElementById("demo").innerHTML = medium[num]
-              }
-  </script>
-  </div>
-  </body>
+
+            <button onclick="myFunction()">Submit</button>
+            <!--Creates the submit button-->
+            <button onclick="buttonFunction()">Next</button>
+
+            <p><span id="reasoning"></span></p>
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+
+            <script>
+                // a list of all the questions and answers for the game
+
+                var easy = ["Staff at Electro confirm that their products are better than competitors.", "A survey conducted on highschool students in the Moore suburbs shows that the suburbs are better for all teens."];
+                var medium = ["According to polls, Presidential candidate #1 will definitely be the next president.", "According to teens studying the release of Apple products, they predict there will most likely be an iPhone 21 release in 2020."];
+                var hard = ["According to a researchers, there is 0.2 milligrams of gold found in blood."];
+
+                var num = 0 //Math.floor((Math.random() * 2));
+
+                var choice;
+
+                var button;
+                
+                var number = 0
+
+                document.getElementById("demo").innerHTML = easy[num]
+                
+                var question = ["easy", "medium", "hard"];
+                
+                var difficulty
+
+                // submit button code
+                function myFunction() {
+                    
+                    choice = document.getElementById("choice").selectedIndex;
+
+                    // console.log(choice)
+
+                    button = "pushed";
+
+                    // if the question is easy is determines wether your answer is correct or not
+                    if (difficulty == "easy") {
+                        if (num == 1) {
+                            if (choice == 0) {
+                                console.log(choice);
+                                window.alert("You are correct!");
+                            }
+                            else if (choice == 1) {
+                                window.alert("A survey made in one school cannot be applied to all teens.");
+                            }
+                        }
+                        else if (num == 2) {
+                            if (choice == 1) {
+                                console.log(choice);
+                                window.alert("You are correct!");
+                            }
+                            else if (choice == 0) {
+                                window.alert("This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product.");
+                            }
+                        }
+                    }
+
+                    // if the question is medium is determines wether your answer is correct or not
+                    else if (difficulty == "medium") {
+                        document.getElementById("demo").innerHTML = medium[num];
+                        if (num == 1) {
+                            if (choice == 0) {
+                                console.log(choice);
+                                window.alert("You are correct!");
+                            }
+                            else if (choice == 1) {
+                                window.alert("Polls madde before an election can anticipate the result but cannot actually determine the outcome with certainty.");
+                            }
+                        }
+                        if (num == 2) {
+                            if (choice == 1) {
+                                console.log(choice);
+                                window.alert("You are correct!");
+                            }
+                            else if (choice == 0) {
+                                window.alert("The article credits its sources and only presents a prediction and not a definite outcome.");
+                            }
+                        }
+                    }
+
+                    // if the question is hard is determines wether your answer is correct or not
+                    else if (difficulty == "hard") {
+                        document.getElementById("demo").innerHTML = hard[num]
+                        if (num == 1) {
+                            console.log(choice)
+                            if (choice == 1) {
+                                window.alert("While an article may have information that can seem untrue, this does not mean it is. Within the article, research is cited and fully explained.")
+                            }
+                            else if (choice == 0) {
+                                console.log(choice);
+                                window.alert("You are correct!");
+                            }
+                        }
+                    }
+                }
+
+                // next button function
+                function buttonFunction() {
+                    if (button != "pushed") {
+                        window.alert("You must submit before going to the next question!");
+                    }
+                    if (button == "pushed" && number < 3) {
+                        console.log(number)
+                        number++
+                    }
+                    
+                    difficulty = question[number]
+                    console.log(difficulty)
+                    
+                    if (difficulty == "easy") {
+                        document.getElementById("demo").innerHTML = easy[num]
+                    }
+                    else if (difficulty == "medium") {
+                        document.getElementById("demo").innerHTML = medium[num]
+                    }
+                    else if (difficulty == "hard") {
+                        document.getElementById("demo").innerHTML = hard[num]
+                    }
+                }
+            </script>
+        </div>
+</body>
+
 </html>
