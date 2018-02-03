@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Game</title>
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
   <body>
@@ -12,9 +12,9 @@
       
       <p>Question: <span id="demo"></span></p>
       
-    <form action="">
-      <input type="radio" name="gender" value="male"> Yes<br>
-      <input type="radio" name="gender" value="female"> No<br>
+    <form action="" id = "choice">
+      <input type="radio" id="answer" value="male"> Credible<br>
+      <input type="radio" id="answer" value="female"> Non-credibe<br>
     </form>
     
     <button onclick="myFunction()">Submit</button>
@@ -31,41 +31,40 @@
       var hard = []
       var num = Math.floor((Math.random() * 2));
       
+      var answer=["credible","non-credible"]
+      
       function myFunction() {
         
       }
       
-      question=question[0]
-      
       if (question == "easy"){
           document.getElementById("demo").innerHTML = easy[num]
+        //   var choice = document.getElementById('answer').value;
           
           if (num==1){
-              
+            
           }
           if (num==2){
-              
+            
           }
           if (num==3){
-              
+            
           }
       }
       if (question == "medium"){
           document.getElementById("demo").innerHTML = medium[num]
-          
           if (num==1){
-              
+             
           }
           if (num==2){
-              
+            
           }
           if (num==3){
-              
+            
           }
       }
       if (question == "hard"){
           document.getElementById("demo").innerHTML = medium[num]
-          
           if (num==1){
               
           }
