@@ -3,11 +3,12 @@
     background: linear-gradient(#A777A2, white);
 }
 
-#heading {
-    font-size: 20px;
-    font-weight: bold;
+#demo {
+    font-size: 30px;
+    color: #414441;
 }
 
-#demo {
-    font-size: 20px;
+h3 {
+    font-size: 30px;
+    color: #414441;
 }
