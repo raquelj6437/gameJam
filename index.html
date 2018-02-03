@@ -10,7 +10,7 @@
       <div id="background">
       <h1></h1>
       
-      <p>Question: <span id="demo"></span></p>
+      <p><span id="heading">Question: </span><span id="demo"></span></p>
       
     <form action="">
       <input type="radio" name="gender" value="male"> Yes<br>
@@ -24,11 +24,11 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   
   <script>
-      var question = ["easy","medium","hard"]
+      var question = ["easy","medium","hard"];
   
-      var easy = []
-      var medium = []
-      var hard = []
+      var easy = ["Staff at Electro confirm that their products are better than competitors.","A survey conducted on highschool students in the Moore suburbs shows that the suburbs are better for all teens."];
+      var medium = ["According to polls, Presidential candidate #1 will definitely be the next president.", "According to teens studying the release of Apple products, they predict there will most likely be an iPhone 21 release in 2020."];
+      var hard = [];
       var num = Math.floor((Math.random() * 2));
       
       function myFunction() {
@@ -38,13 +38,13 @@
       question=question[0]
       
       if (question == "easy"){
-          document.getElementById("demo").innerHTML = easy[num]
+          document.getElementById("demo").innerHTML = easy[num];
       }
       if (question == "medium"){
-          document.getElementById("demo").innerHTML = medium[num]
+          document.getElementById("demo").innerHTML = medium[num];
       }
       if (question == "hard"){
-          document.getElementById("demo").innerHTML = medium[num]
+          document.getElementById("demo").innerHTML = medium[num];
       }
   </script>
   </div>

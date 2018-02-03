@@ -2,3 +2,12 @@
     height:500px;
     background: linear-gradient(#A777A2, white);
 }
+
+#heading {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#demo {
+    font-size: 20px;
+}
