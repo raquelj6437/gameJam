@@ -18,12 +18,13 @@
         <div class="container">
             <h1>Learn To Discern</h1>
             <h3>Decide whether the headline is credible or not.</h3>
+            <span id="difficulty"></span><br><br>
             <span id="demo"></span>
 
             <!--Plays the music as soon as the page loads-->
             <audio autoplay>
-          <source src="music.mp3" type="audio/mpeg">
-        </audio>
+                <source src="music.mp3" type="audio/mpeg">
+            </audio>
 
             <!--Adds the dropdown bar for the choices "credible" and "non-credible"-->
             <select id="choice">
@@ -56,12 +57,13 @@
 
                 document.getElementById("demo").innerHTML = easy[num]
 
-                var question = ["easy", "medium", "hard"];
+                var question = ["Easy", "Medium", "Hard"];
 
                 var difficulty = "easy"
-                
+
                 var go = 1
 
+                document.getElementById("difficulty").innerHTML = "Level Type: " + question[number]
                 // submit button code
                 function myFunction() {
 
@@ -70,70 +72,70 @@
                     button = "pushed";
 
                     // if the question is easy is determines wether your answer is correct or not
-                    if (difficulty == "easy") {
+                    if (difficulty.toLowerCase() == "easy") {
                         if (num == 1) {
                             if (choice == 0) {
                                 console.log(choice);
-                                document.getElementById("reasoning").innerHTML=("You are correct!");
+                                document.getElementById("reasoning").innerHTML = ("You are correct!");
                                 go = 1
                             }
                             else if (choice == 1) {
-                                document.getElementById("reasoning").innerHTML= ("A survey made in one school cannot be applied to all teens.");
+                                document.getElementById("reasoning").innerHTML = ("A survey made in one school cannot be applied to all teens.");
                                 go = 0
                             }
                         }
                         else if (num == 0) {
                             if (choice == 1) {
                                 console.log(choice);
-                                document.getElementById("reasoning").innerHTML=("You are correct!");
+                                document.getElementById("reasoning").innerHTML = ("You are correct!");
                                 go = 1
                             }
                             else if (choice == 0) {
-                                document.getElementById("reasoning").innerHTML=("This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product.");
+                                document.getElementById("reasoning").innerHTML = ("This headline is not-credible. It is important to identify possible bias. Staff at a certain company are more inclined to prefer their own product.");
                                 go = 0
                             }
                         }
                     }
 
                     // if the question is medium is determines wether your answer is correct or not
-                    else if (difficulty == "medium") {
+                    else if (difficulty.toLowerCase() == "medium") {
                         document.getElementById("demo").innerHTML = medium[num];
                         if (num == 0) {
                             if (choice == 0) {
                                 console.log(choice);
-                                document.getElementById("reasoning").innerHTML=("You are correct!");
+                                document.getElementById("reasoning").innerHTML = ("You are correct!");
                                 go = 1
                             }
                             else if (choice == 1) {
-                                document.getElementById("reasoning").innerHTML=("Polls madde before an election can anticipate the result but cannot actually determine the outcome with certainty.");
+                                document.getElementById("reasoning").innerHTML = ("Polls madde before an election can anticipate the result but cannot actually determine the outcome with certainty.");
                                 go = 0
                             }
                         }
                         if (num == 1) {
                             if (choice == 1) {
                                 console.log(choice);
-                                document.getElementById("reasoning").innerHTML=("You are correct!");
+                                document.getElementById("reasoning").innerHTML = ("You are correct!");
                                 go = 1
                             }
                             else if (choice == 0) {
-                                document.getElementById("reasoning").innerHTML=("The article credits its sources and only presents a prediction and not a definite outcome.");
+                                document.getElementById("reasoning").innerHTML = ("The article credits its sources and only presents a prediction and not a definite outcome.");
                                 go = 0
                             }
                         }
                     }
 
                     // if the question is hard is determines wether your answer is correct or not
-                    else if (difficulty == "hard") {
+                    else if (difficulty.toLowerCase() == "hard") {
                         document.getElementById("demo").innerHTML = hard[num]
                         if (num == 0) {
                             console.log(choice)
                             if (choice == 1) {
-                                document.getElementById("reasoning").innerHTML=("While an article may have information that can seem untrue, this does not mean it is. Within the article, research is cited and fully explained.")
+                                document.getElementById("reasoning").innerHTML = ("While an article may have information that can seem untrue, this does not mean it is. Within the article, research is cited and fully explained.")
                                 go = 0
                             }
                             else if (choice == 0) {
                                 console.log(choice);
-                                document.getElementById("reasoning").innerHTML=("You are correct!");
+                                document.getElementById("reasoning").innerHTML = ("You are correct!");
                                 go = 1
                             }
                         }
@@ -149,26 +151,28 @@
                         number++
                     }
                     else if (button == "pushed" && number < 3 && go == 0) {
-                        if(go >= 0){
-                            if(number > 0){
+                        if (go >= 0) {
+                            if (number > 0) {
                                 number--
                             }
                         }
                     }
 
                     difficulty = question[number]
-                    console.log(number)
-                    console.log(go)
 
-                    if (difficulty == "easy") {
+                    if (difficulty.toLowerCase() == "easy") {
                         document.getElementById("demo").innerHTML = easy[num]
                     }
-                    else if (difficulty == "medium") {
+                    else if (difficulty.toLowerCase() == "medium") {
                         document.getElementById("demo").innerHTML = medium[num]
                     }
-                    else if (difficulty == "hard") {
+                    else if (difficulty.toLowerCase() == "hard") {
                         document.getElementById("demo").innerHTML = hard[num]
                     }
+                    
+                    button = "unpushed";
+                    
+                    document.getElementById("difficulty").innerHTML = "Level Type: " + question[number]
                 }
             </script>
         </div>
