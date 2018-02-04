@@ -5,22 +5,30 @@
 
 #demo {
     font-size: 30px;
-    color: #414441;
 }
 
 h3 {
     font-size: 30px;
-    color: #414441;
-    text-align: center
 }
 
 html, body, #background {
     height: 100%;
+    color:black;
+}
+
+#title{
+    background: radial-gradient(red,pink);
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 100px
 }
 
 h1{
     text-align: center;
-    color: black;
+    vertical-align: middle;
+    line-height: 90px;
+    font-size: 50px;
 }
 
 #easy{
