@@ -16,3 +16,12 @@ h3 {
 html, body, #background {
     height: 100%;
 }
+
+h1{
+    text-align: center;
+}
+
+select{
+    width:100%;
+    font-size: 100000px;
+}

@@ -17,25 +17,29 @@
     <div id="background">
         <div class="container">
             <h1>Learn To Discern</h1>
-            <h3>Decide whether the headline is credible or not.</h3>
+            <h3>Decide whether the headline is credible or not.</h3><br>
             <span id="difficulty"></span><br><br>
             <span id="demo"></span>
 
             <!--Plays the music as soon as the page loads-->
             <audio autoplay>
-                <source src="music.mp3" type="audio/mpeg">
+                <!--<source src="music.mp3" type="audio/mpeg">-->
             </audio>
 
             <!--Adds the dropdown bar for the choices "credible" and "non-credible"-->
+            <br><br>
             <select id="choice">
                 <option value="Non-credible">Non-credible</option>
                 <option value="Credible">Credible</option>
             </select>
 
-            <button onclick="myFunction()">Submit</button>
-            <!--Creates the submit button-->
-            <button onclick="buttonFunction()">Next</button>
+            <div style="text-align:center;">
+                <br><br><button onclick="myFunction()">Submit</button>
+                <!--Creates the submit button-->
+                <br><br><button onclick="buttonFunction()">Next</button>
+            </div>
 
+            <br><br>
             <p><span id="reasoning"></span></p>
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
@@ -169,9 +173,9 @@
                     else if (difficulty.toLowerCase() == "hard") {
                         document.getElementById("demo").innerHTML = hard[num]
                     }
-                    
+
                     button = "unpushed";
-                    
+
                     document.getElementById("difficulty").innerHTML = "Level Type: " + question[number]
                 }
             </script>
