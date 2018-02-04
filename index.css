@@ -11,6 +11,7 @@
 h3 {
     font-size: 30px;
     color: #414441;
+    text-align: center
 }
 
 html, body, #background {
@@ -19,6 +20,23 @@ html, body, #background {
 
 h1{
     text-align: center;
+    color: black;
+}
+
+#easy{
+    color: green;
+}
+
+#medium{
+    color: yellow;
+}
+
+#hard{
+    color: red;
+}
+
+#difficulty{
+    font-size: 20px
 }
 
 button{
@@ -27,6 +45,7 @@ button{
     color: white;
     border:none;
     border-radius: 25px;
+    height: 30px;
 }
 
 select{
