@@ -28,10 +28,12 @@
 
             <!--Adds the dropdown bar for the choices "credible" and "non-credible"-->
             <br><br>
-            <select id="choice">
-                <option value="Non-credible">Non-credible</option>
-                <option value="Credible">Credible</option>
-            </select>
+            <div class="input-field">
+                <select id="choice">
+                    <option value="Non-credible" class = "drop">Non-credible</option>
+                    <option value="Credible" class = "drop">Credible</option>
+                </select>
+            </div>
 
             <div style="text-align:center;">
                 <br><br><button onclick="myFunction()">Submit</button>
@@ -42,7 +44,8 @@
             <br><br>
             <p><span id="reasoning"></span></p>
 
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript">
+            </script>
 
             <script>
                 // a list of all the questions and answers for the game
@@ -69,6 +72,7 @@
 
                 document.getElementById("difficulty").innerHTML = "Level Type: " + question[number]
                 // submit button code
+  
                 function myFunction() {
 
                     choice = document.getElementById("choice").selectedIndex;
